@@ -13,4 +13,12 @@ class MethodChannelFlutterInAppBrowser extends FlutterInAppBrowserPlatform {
         await methodChannel.invokeMethod<String>('getPlatformVersion');
     return version;
   }
+
+  @override
+  Future<Map<String, dynamic>?> get(String name,
+      {Map<String, dynamic>? params}) async {
+    final response = await methodChannel.invokeMapMethod<String, dynamic>(
+        'get', {'name': name, 'params': params});
+    return response;
+  }
 }

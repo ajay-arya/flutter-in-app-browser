@@ -20,4 +20,8 @@ abstract class FlutterInAppBrowserPlatform extends PlatformInterface {
   Future<String?> getPlatformVersion() {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
+
+  Future get(String name, {Map<String, dynamic>? params}) {
+    throw UnimplementedError('get(name, params) has not been implemented.');
+  }
 }

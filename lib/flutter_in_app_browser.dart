@@ -10,4 +10,10 @@ class FlutterInAppBrowser {
   List<Platform> getAvailablePlatforms() {
     return availablePlatforms;
   }
+
+  Future get(String name, {Map<String, dynamic>? params}) async {
+    final responseMap =
+        await FlutterInAppBrowserPlatform.instance.get(name, params: params);
+    return responseMap;
+  }
 }
